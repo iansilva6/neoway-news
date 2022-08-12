@@ -3,6 +3,8 @@ import GlobalStyle from "./assets/styles/global";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import ReactDOM from "react-dom/client";
+import { Provider } from "react-redux";
+import store from "./redux/store";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const root = ReactDOM.createRoot(
@@ -11,9 +13,11 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    <GlobalStyle />
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <Provider store={store}>
+      <GlobalStyle />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>
 );
