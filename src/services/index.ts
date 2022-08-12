@@ -1,5 +1,7 @@
 import axios from "axios";
 
+const apiKey = `&apikey=${process.env.REACT_APP_API_KEY}`
+
 export const api = axios.create({
   baseURL: 'https://newsapi.org/v2/everything',
   headers: {
@@ -9,7 +11,7 @@ export const api = axios.create({
 
 export async function getNews(category:String) {
   try {
-    const res = await api.get(`?q=${category}`);
+    const res = await api.get(`?q=${category}&apikey=${apiKey}`);
 
     return res.data;
   } catch (err) {
