@@ -7,14 +7,12 @@ import { useDispatch } from 'react-redux'
 import { loadNews } from '../../redux/slices/newsSlice'
 import { getNews } from '../../services'
 import { useSelector } from 'react-redux'
+import { Object, Filter } from '../../interfaces'
 
 export const Home = () => {
   // States
   const [newsList, setNewsList] = React.useState<any[]>([])
-  const [filterData, setFilterData] = React.useState<{
-    orderBy: string;
-    filterBy: string;
-  }>({ orderBy: "publishedAt", filterBy: "crypto" })
+  const [filterData, setFilterData] = React.useState<Filter>({ orderBy: "publishedAt", filterBy: "crypto" })
   const [loading, setLoading] = React.useState<boolean>(true)
 
   // Get data from redux
@@ -24,7 +22,7 @@ export const Home = () => {
 
   // Make request to get news
   const makeRequest = () => {
-    getNews(filterData.filterBy, filterData.orderBy)
+    getNews(filterData)
       .then((res) => {
         dispatch(loadNews(res.articles))
         setLoading(false)
@@ -50,11 +48,7 @@ export const Home = () => {
     const target = evt.target
     const name = target.name
 
-    interface Filter {
-      [key: string]: string
-    }
-
-    const formDataActions: Filter = {
+    const formDataActions: Object = {
       orderBy: target.value,
       filterBy: target.value,
     };

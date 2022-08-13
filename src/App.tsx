@@ -1,9 +1,9 @@
-import loadable from "@loadable/component"
-import { Route, Routes } from "react-router-dom"
-import { ThemeProvider } from "styled-components"
-import { defaultTheme } from "./assets/styles/theme"
+import loadable from '@loadable/component'
+import { Route, Routes } from 'react-router-dom'
+import { ThemeProvider } from 'styled-components'
+import { defaultTheme } from './assets/styles/theme'
 
-const Home = loadable(() => import("./pages/Home/"), {
+const Home = loadable(() => import('./pages/Home/'), {
   resolveComponent: (components) => components.Home,
 });
 

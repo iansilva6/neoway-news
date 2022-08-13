@@ -1,4 +1,5 @@
-import axios from "axios";
+import axios from 'axios'
+import { Filter } from '../interfaces';
 
 const apiKey = `&apikey=${process.env.REACT_APP_API_KEY}`
 
@@ -9,9 +10,9 @@ export const api = axios.create({
   }
 });
 
-export async function getNews(category:String, order:String) {
+export async function getNews(param: Filter) {
   try {
-    const res = await api.get(`?q=${category}&sortBy=${order}${apiKey}`);
+    const res = await api.get(`?q=${param.filterBy}&sortBy=${param.orderBy}${apiKey}`);
 
     return res.data;
   } catch (err) {

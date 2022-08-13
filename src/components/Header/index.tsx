@@ -1,13 +1,9 @@
 import { NavbarBrand } from 'react-bootstrap'
 import { Container, Title, Subtitle } from './style'
 import { FilterForm } from '../FilterForm'
+import { HeaderFunctions } from '../../interfaces'
 
-type Props = {
-  applyFilters: React.FormEventHandler<HTMLFormElement>;
-  handleChange: React.ChangeEventHandler<HTMLSelectElement>;
-}
-
-export const Header: React.FC<Props> = ({applyFilters, handleChange}) => {
+export const Header: React.FC<HeaderFunctions> = ({applyFilters, handleChange}) => {
   return (
     <Container>
       <NavbarBrand href={"/"}>

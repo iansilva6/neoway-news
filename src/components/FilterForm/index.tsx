@@ -1,11 +1,7 @@
 import { Form, Button } from 'react-bootstrap'
+import { HeaderFunctions } from '../../interfaces'
 
-type Props = {
-  applyFilters: React.FormEventHandler<HTMLFormElement>;
-  handleChange: React.ChangeEventHandler<HTMLSelectElement>;
-}
-
-export const FilterForm: React.FC<Props> = ({applyFilters, handleChange}) => {
+export const FilterForm: React.FC<HeaderFunctions> = ({applyFilters, handleChange}) => {
   return (
     <Form onSubmit={applyFilters} className={"d-flex align-items-end justify-content-center"}>
       <Form.Group className="me-3" controlId="orderBy">
