@@ -1,27 +1,34 @@
-import { Image } from "react-bootstrap";
-import { New } from "./style";
+import { Image } from 'react-bootstrap'
+import { New } from './style'
+import moment from 'moment'
 
-export const Article = () => {
+type Props = {
+  image: string;
+  title: string;
+  subtitle: string;
+  createdAt: string;
+}
+
+export const Article: React.FC<Props> = ({image, title, subtitle, createdAt}) => {
   return (
-    <New className="p-4">
-      <div className="text-center">
-        <Image
-          width={300}
-          className={'mb-xs-4'}
-          src={
-            "https://s.yimg.com/os/creatr-uploaded-images/2022-07/c57b1660-033d-11ed-9fda-8da1ceb296ff"
-          }
-        />
-      </div>
-      <div className='ms-md-4'>
-        <h2>Title</h2>
-        <p>
-          Este poderia ser o post de um fórum, um artigo de revista ou jornal,
-          um post de um blog, um comentário enviado por um usuário, um gadget ou
-          widget interativos, ou qualquer outra forma de conteúdo independente.
-        </p>
-        <span><strong>12/02/2022</strong></span>
-      </div>
-    </New>
+    <a href={'/read'}>
+      <New className="p-4 mb-4">
+        <div className="text-center">
+          <Image
+            width={300}
+            height={200}
+            className={"mb-xs-4"}
+            src={image}
+          />
+        </div>
+        <div className="ms-md-4 w-100">
+          <h2>{title}</h2>
+          <p>{subtitle}</p>
+          <span>
+            <strong>{moment(createdAt).format('DD/MM/YYYY')}</strong>
+          </span>
+        </div>
+      </New>
+    </a>
   );
 };

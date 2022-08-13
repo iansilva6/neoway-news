@@ -20,16 +20,10 @@ body {
 #root {
   width: 100%;
   height: 100%;
-  main {
-    width: 100%;
-    margin: 0 auto;
-    padding: 10px;
-    @media (min-width: 1024px) {
-      display: flex;
-      max-width: 1120px;
-      justify-content: space-between;
-    }
-  }
+}
+a {
+  text-decoration: none;
+  color: inherit;
 }
 `
 

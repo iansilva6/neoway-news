@@ -11,7 +11,7 @@ export const api = axios.create({
 
 export async function getNews(category:String) {
   try {
-    const res = await api.get(`?q=${category}${apiKey}`);
+    const res = await api.get(`?q=${category}&sortBy=publishedAt${apiKey}`);
 
     return res.data;
   } catch (err) {
