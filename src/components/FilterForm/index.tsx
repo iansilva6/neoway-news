@@ -1,11 +1,15 @@
 import { Form, Button } from 'react-bootstrap'
 
-export const FilterForm = () => {
+type Props = {
+  applyFilters: React.FormEventHandler<HTMLFormElement>
+}
+
+export const FilterForm: React.FC<Props> = ({applyFilters}) => {
   return (
-    <Form className={"d-flex align-items-end justify-content-center"}>
+    <Form onSubmit={applyFilters} className={"d-flex align-items-end justify-content-center"}>
       <Form.Group className="me-3" controlId="orderBy">
         <Form.Label>Ordenar:</Form.Label>
-        <Form.Select aria-label="Ordenar por">
+        <Form.Select aria-label="Ordenar por" name={'orderBy'}>
           <option value='publishedAt'>Data de publicação</option>
           <option value='relevancy'>Relevância</option>
           <option value='popularity'>Popularidade</option>
@@ -13,7 +17,7 @@ export const FilterForm = () => {
       </Form.Group>
       <Form.Group className="me-3" controlId="filterBy">
         <Form.Label>Filtrar:</Form.Label>
-        <Form.Select aria-label="Filtrar por">
+        <Form.Select aria-label="Filtrar por" name={'filterBy'}>
           <option>Todos</option>
           <option value='bitcoin'>Bitcoin</option>
           <option value='ethereum'>Ethereum</option>

@@ -2,13 +2,19 @@ import { NavbarBrand } from 'react-bootstrap'
 import { Container, Title } from './style'
 import { FilterForm } from '../FilterForm'
 
-export const Header = () => {
+type Props = {
+  applyFilters: React.FormEventHandler<HTMLFormElement>
+}
+
+export const Header: React.FC<Props> = ({applyFilters}) => {
   return (
     <Container>
       <NavbarBrand href={"/"}>
         <Title>Neoway News</Title>
       </NavbarBrand>
-      <FilterForm />
+      <FilterForm 
+        applyFilters={applyFilters}
+      />
     </Container>
   );
 };
