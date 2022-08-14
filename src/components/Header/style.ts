@@ -31,7 +31,7 @@ export const Subtitle = styled.h1 `
     color: ${(props) => props.theme.colors.grey};
     text-align: center;
     width: 100%;
-    font-size: 16px;
+    font-size: 17px;
     margin-bottom: 20px;
     @media screen and (min-width: ${(props) => props.theme.breakpoints.desktop}) {
         text-align: left;

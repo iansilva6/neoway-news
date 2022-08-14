@@ -3,6 +3,7 @@ import React from 'react'
 import { Container, Row, Col, Spinner } from 'react-bootstrap'
 import { Header } from '../../components/Header'
 import { Article } from '../../components/Article'
+import { Menu } from '../../components/Menu'
 import { useDispatch } from 'react-redux'
 import { loadNews } from '../../redux/slices/newsSlice'
 import { getNews } from '../../services'
@@ -40,6 +41,7 @@ export const Home = () => {
 
   React.useEffect(() => {
     setNewsList(news)
+    setLoading(false)
   }, [news]);
 
   // Handle to save filter data
@@ -73,6 +75,9 @@ export const Home = () => {
       <Header applyFilters={filter} handleChange={handleFilter} />
       <Container>
         <Row>
+          <Col xs={12}>
+            <Menu/>
+          </Col>
           <Col xs={12} className="mb-4">
             {newsList && !loading
               ? newsList.map((item, i) => {
