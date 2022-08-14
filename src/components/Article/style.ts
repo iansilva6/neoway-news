@@ -5,6 +5,7 @@ export const New = styled.article`
   background: ${(props) => props.theme.colors.white};
   justify-content: space-between;
   align-items: center;
+  cursor: pointer;
   @media screen and (min-width: ${(props) => props.theme.breakpoints.desktop}) {
     display: flex;
     justify-content: space-between;
