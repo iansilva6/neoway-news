@@ -5,7 +5,7 @@ import { NewData } from '../../interfaces'
 
 export const Article: React.FC<NewData> = ({image, title, subtitle, createdAt}) => {
   return (
-    
+    <a href={'/ler-noticia'}>
       <New role="article" className="p-4 mb-4">
         <div className="text-center">
           <Image
@@ -24,6 +24,6 @@ export const Article: React.FC<NewData> = ({image, title, subtitle, createdAt}) 
           </span>
         </div>
       </New>
-
+    </a>
   );
 };

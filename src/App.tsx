@@ -7,11 +7,16 @@ const Home = loadable(() => import('./pages/Home/'), {
   resolveComponent: (components) => components.Home,
 });
 
+const Read = loadable(() => import('./pages/Read/'), {
+  resolveComponent: (components) => components.Read,
+});
+
 const App = () => {
   return (
     <ThemeProvider theme={defaultTheme}>
       <Routes>
-        <Route path="/" element={<Home />}></Route>
+        <Route path='/' element={<Home />}></Route>
+        <Route path='/ler-noticia' element={<Read />}></Route>
       </Routes>
     </ThemeProvider>
   );

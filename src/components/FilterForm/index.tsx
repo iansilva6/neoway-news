@@ -1,9 +1,9 @@
 import { Form, Button } from 'react-bootstrap'
-import { HeaderFunctions } from '../../interfaces'
+import { HandleFunctions } from '../../interfaces'
 
-export const FilterForm: React.FC<HeaderFunctions> = ({applyFilters, handleChange}) => {
+export const FilterForm: React.FC<HandleFunctions> = ({handleSubmit, handleChange}) => {
   return (
-    <Form onSubmit={applyFilters} className={"d-flex align-items-end justify-content-center"}>
+    <Form onSubmit={handleSubmit} className={"d-flex align-items-end  mb-4"}>
       <Form.Group className="me-3" controlId="orderBy">
         <Form.Label>Ordenar:</Form.Label>
         <Form.Select aria-label="Ordenar por" name={'orderBy'} onChange={handleChange}>

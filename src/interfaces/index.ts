@@ -14,7 +14,7 @@ export interface NewData {
   createdAt: string;
 }
 
-export interface HeaderFunctions {
-  applyFilters: React.FormEventHandler<HTMLFormElement>;
+export interface HandleFunctions {
+  handleSubmit: React.FormEventHandler<HTMLFormElement>;
   handleChange: React.ChangeEventHandler<HTMLSelectElement>;
 }
