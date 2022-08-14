@@ -21,4 +21,7 @@ export const New = styled.article`
   span {
     color: ${(props) => props.theme.colors.grey};
   }
+  &:hover {
+    text-decoration: underline;
+  }
 `

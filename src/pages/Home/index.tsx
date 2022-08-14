@@ -23,7 +23,7 @@ export const Home = () => {
   // Get data from redux
   const news = useSelector((state: any) => state.news.items);
 
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   const dispatch = useDispatch();
 
@@ -46,8 +46,10 @@ export const Home = () => {
   }, [dispatch]);
 
   React.useEffect(() => {
-    setNewsList(news);
-    setLoading(false);
+    if (news.length > 0) {
+      setLoading(false);
+      setNewsList(news);
+    }
   }, [news]);
 
   // Handle to save filter data
