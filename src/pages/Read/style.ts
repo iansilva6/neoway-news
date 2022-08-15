@@ -13,4 +13,7 @@ export const Article = styled.article`
   a {
     text-decoration: underline;
   }
+  img {
+    max-width: 100%;
+  }
 `

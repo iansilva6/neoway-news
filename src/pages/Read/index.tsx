@@ -15,22 +15,21 @@ export const Read = () => {
     urlToImage: "",
     publishedAt: "",
     description: "",
-  });
-  const [loading, setLoading] = React.useState<boolean>(true);
+  })
+  const [loading, setLoading] = React.useState<boolean>(true)
 
-  const read = useSelector((state: any) => state.read.item);
+  const read = useSelector((state: any) => state.read.item)
 
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   React.useEffect(() => {
     if (Object.keys(read).length !== 0) {
-      setNews(read);
-      setLoading(false);
-      console.log(read)
+      setNews(read)
+      setLoading(false)
     } else {
-      return navigate("/");
+      return navigate("/")
     }
-  }, [read]);
+  }, [read])
 
   return (
     <>
@@ -48,15 +47,15 @@ export const Read = () => {
                     alt={news.title}
                   />
                 </div>
-                <h2 className="text-center">{news.title}</h2>
+                <h2 className="text-center" data-testid="title">{news.title}</h2>
                 <div className="text-center mb-2">
                   <a href={news.url} target="_blank" rel="noreferrer noopener">Ver artigo no site de origem</a>
                 </div>
-                <div className="d-flex justify-content-center mb-3">
-                  <span className="me-3 text-center">Escrito por: {news.author}</span>
-                  <span className="text-center">Publicado em: {formatDate(news.publishedAt)}</span>
+                <div className="text-center mb-3">
+                  <span data-testid="author"><strong>Escrito por:</strong> {news.author}</span>
+                  <span data-testid="publishedAt"><strong>Publicado em:</strong> {formatDate(news.publishedAt)}</span>
                 </div>
-                <p>{news.content}</p>
+                <p data-testid="content">{news.content}</p>
               </Article>
             ) : (
               <div className="d-flex justify-content-center py-5">
