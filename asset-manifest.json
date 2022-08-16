@@ -1,21 +1,21 @@
 {
   "files": {
     "main.css": "/neoway-news/static/css/main.84487ea8.css",
-    "main.js": "/neoway-news/static/js/main.e6394c20.js",
-    "static/js/446.390bed5a.chunk.js": "/neoway-news/static/js/446.390bed5a.chunk.js",
+    "main.js": "/neoway-news/static/js/main.c8622e05.js",
+    "static/js/446.ba5aedec.chunk.js": "/neoway-news/static/js/446.ba5aedec.chunk.js",
     "static/js/213.a884259f.chunk.js": "/neoway-news/static/js/213.a884259f.chunk.js",
     "static/js/238.23d709f5.chunk.js": "/neoway-news/static/js/238.23d709f5.chunk.js",
     "static/js/554.26f1288c.chunk.js": "/neoway-news/static/js/554.26f1288c.chunk.js",
     "index.html": "/neoway-news/index.html",
     "main.84487ea8.css.map": "/neoway-news/static/css/main.84487ea8.css.map",
-    "main.e6394c20.js.map": "/neoway-news/static/js/main.e6394c20.js.map",
-    "446.390bed5a.chunk.js.map": "/neoway-news/static/js/446.390bed5a.chunk.js.map",
+    "main.c8622e05.js.map": "/neoway-news/static/js/main.c8622e05.js.map",
+    "446.ba5aedec.chunk.js.map": "/neoway-news/static/js/446.ba5aedec.chunk.js.map",
     "213.a884259f.chunk.js.map": "/neoway-news/static/js/213.a884259f.chunk.js.map",
     "238.23d709f5.chunk.js.map": "/neoway-news/static/js/238.23d709f5.chunk.js.map",
     "554.26f1288c.chunk.js.map": "/neoway-news/static/js/554.26f1288c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.84487ea8.css",
-    "static/js/main.e6394c20.js"
+    "static/js/main.c8622e05.js"
   ]
 }
