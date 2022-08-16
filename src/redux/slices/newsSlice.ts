@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
 
 export const slice = createSlice({
   name: 'news',
@@ -12,8 +12,8 @@ export const slice = createSlice({
   }
 })
 
-export const { loadNews } = slice.actions
+export const { loadNews } = slice.actions;
 
-export const getNews = (state: any) => state.news
+export const getNews = (state: any) => state.news;
 
-export default slice.reducer
+export default slice.reducer;

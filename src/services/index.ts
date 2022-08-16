@@ -1,7 +1,7 @@
-import axios from 'axios'
-import { Filter } from '../interfaces';
+import axios from "axios";
+import { Filter } from "../interfaces";
 
-const apiKey = `&apikey=${process.env.REACT_APP_API_KEY}`
+const apiKey = `&apikey=${process.env.REACT_APP_API_KEY}`;
 
 export const api = axios.create({
   baseURL: 'https://newsapi.org/v2/everything',
@@ -18,4 +18,4 @@ export async function getNews(param: Filter) {
   } catch (err) {
     throw err;
   }
-}
+};

@@ -1,7 +1,7 @@
-import { configureStore } from '@reduxjs/toolkit'
-import newsReducer from './slices/newsSlice'
-import readReducer from './slices/readSlice'
-import historySlice from './slices/historySlice'
+import { configureStore } from "@reduxjs/toolkit";
+import newsReducer from "./slices/newsSlice";
+import readReducer from "./slices/readSlice";
+import historySlice from "./slices/historySlice";
 
 export default configureStore({
   reducer: {
