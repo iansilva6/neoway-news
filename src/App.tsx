@@ -15,7 +15,7 @@ const App = () => {
   return (
     <ThemeProvider theme={defaultTheme}>
       <Routes>
-        <Route path='/' element={<Home />}></Route>
+        <Route path={'/'} element={<Home />}></Route>
         <Route path='/read' element={<Read />}></Route>
       </Routes>
     </ThemeProvider>

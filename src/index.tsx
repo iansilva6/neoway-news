@@ -1,7 +1,7 @@
 import React from 'react'
 import GlobalStyle from './assets/styles/global'
 import App from './App'
-import { BrowserRouter } from 'react-router-dom'
+import { HashRouter } from 'react-router-dom'
 import ReactDOM from 'react-dom/client'
 import { Provider } from 'react-redux'
 import store from './redux/store'
@@ -15,9 +15,9 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <GlobalStyle />
-      <BrowserRouter>
+      <HashRouter>
         <App />
-      </BrowserRouter>
+      </HashRouter>
     </Provider>
   </React.StrictMode>
 );
