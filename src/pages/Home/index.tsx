@@ -6,10 +6,11 @@ import { Article } from "../../components/Article";
 import { FilterForm } from "../../components/FilterForm";
 import { loadNews } from "../../redux/slices/newsSlice";
 import { loadRead } from "../../redux/slices/readSlice";
+import { loadHistory } from "../../redux/slices/historySlice";
 import { getNews } from "../../services";
 import { useSelector, useDispatch } from "react-redux";
 import { Object, Filter, News } from "../../interfaces";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const Home = () => {
   // States
@@ -23,8 +24,6 @@ export const Home = () => {
   // Get data from redux
   const news = useSelector((state: any) => state.news.items);
 
-  const navigate = useNavigate();
-
   const dispatch = useDispatch();
 
   // Make request to get news
@@ -37,7 +36,7 @@ export const Home = () => {
       })
       .catch((err) => {
         setLoading(false);
-        alert(err);
+        alert(err?.message);
       });
   };
 
@@ -80,7 +79,7 @@ export const Home = () => {
 
   const readNews = (news: News) => {
     dispatch(loadRead(news));
-    return navigate("/read");
+    dispatch(loadHistory(news));
   };
 
   return (
@@ -95,14 +94,14 @@ export const Home = () => {
             {newsList && !loading ? (
               newsList.map((item, i) => {
                 return (
-                  <div onClick={() => readNews(item)} key={i}>
+                  <Link to="/read" key={i} onClick={() => readNews(item)}>
                     <Article
                       title={item.title}
                       description={item.description}
                       urlToImage={item.urlToImage}
                       publishedAt={item.publishedAt}
                     />
-                  </div>
+                  </Link>
                 );
               })
             ) : (

@@ -1,14 +1,17 @@
 import { Container } from "./style";
 import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 export const Menu = () => {
   return (
     <Container>
       <ul>
         <li>
-          <Button variant="secondary" size="lg" className="me-3">
-            Lidos Recentemente
-          </Button>
+          <Link to="/history">
+            <Button variant="secondary" size="lg" className="me-3">
+              Lidos Recentemente
+            </Button>
+          </Link>
         </li>
         <li>
           <Button variant="warning" size="lg">

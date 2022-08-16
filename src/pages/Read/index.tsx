@@ -36,7 +36,7 @@ export const Read = () => {
       <Header />
       <Container>
         <Row>
-          <Col xs={12}>
+          <Col xs={12} className="mb-4">
             {news && !loading ? (
               <Article>
                 <div className="text-center">
